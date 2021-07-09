@@ -1,0 +1,179 @@
+<html>
+<script src='file:///C:/Users/user/Desktop/script.js'> </script>
+<style type="text/css">
+
+.test {
+	background-image: linear-gradient(180deg, #3b3b3b, #1b1b1b 40%, #2b2b2b); 	
+	width: 200px;
+	font-size: 50;
+	padding: 8px 12px;
+	border: solid 1px black;
+	position: relative;
+	left: 1px;
+}
+.test2 {
+	background-image: linear-gradient(180deg, #3b3b3b, #1b1b1b 40%, #2b2b2b); 	
+	width: 200px;
+	font-size: 50;
+	padding: 8px 12px;
+	border: solid 1px black;
+	position: relative;
+	left: 9px;
+	display: none;
+	z-index: 300;
+}
+.dark-theme{
+	background-color: #2b2b2b;
+	color: #fff;
+	border:  solid 1px black;
+}
+.header{
+width: 100%;
+height: 30px;
+margin-left: -10px;
+background-color: #ffffff;
+color: #000000;
+display: flex;
+border: solid 1px black;
+flex-direction: rows;
+}
+.menu{
+overflow: hidden;
+height: 18px;
+width: 150px;
+align: center;
+position: relative;
+top: 5px
+}
+.menu:hover{
+overflow: visible;
+z-index: 999;
+}
+.back{
+background-color: #ffffff;
+width: 150px;
+padding-left: 1px;
+padding-bottom: 2px;
+}
+.settings{
+padding-top: 3px;
+}
+.hidden{
+display:none;
+}
+.tasks{
+display: flex;
+flex-direction: column;
+width: 100%;
+margin-right: 15px;
+margin-left: -10px;
+text-align: center;
+}
+.task{
+display: flex;
+background: #000044;
+flex-direction: rows;
+border: solid 3px blue;
+margin-top: 5px;
+height: 60px;
+width: 100%;
+text-align: center;
+overflow:hidden;
+}
+.task:hover{
+overflow:visible;
+z-index = 0;
+}
+.point:hover{
+overflow:visible;
+z-index = 0;
+}
+.point{
+display: flex;
+text-align: center;
+justify-content: center;
+margin: auto;
+align-items: center;
+border: solid 1px blue;
+background: #000044;
+height: 60px;
+overflow: hidden;
+}
+
+.course{
+width: 20%;
+}
+.task1{
+width: 30%;
+margin
+overflow: hidden;
+}
+.links{
+width: 10%;
+}
+.deadline{
+width: 10%;
+}
+.stat{
+width: 20%;
+}
+.notes{
+width:20%;
+}
+.buttons{
+color: #ffffff;
+background: blue;
+border: none;
+}
+
+</style>
+
+<body class = 'dark-theme'>
+
+<div id = 'header' class = 'header'>
+	
+		<div class= 'menu'>
+		<center>Аккаунт</center>
+			<div class = 'back'>
+				<input type = text placeholder = 'email' id = 'login'>
+				</input>
+				
+				<input type = password placeholder = 'password' id = 'password'>
+				</input>
+				<button onclick = 'GetToken()' > 
+					Проверить 
+				</button>
+				<span id = 'idstatus'>  </span>	
+			</div>
+	</div>
+</div>
+
+<div id 'taskset' class = 'header'>
+	<div class = 'settings'>
+		<input id = 'tasktodo' type=checkbox> Только невыполненные </input>
+	</div>
+	<div class = 'settings'>
+		<input id = 'tasklate' type=checkbox> Только непросроченные </input>
+	</div>
+		<div class = 'settings'>
+		<input id = 'taskwait' type=checkbox> Не в проверке </input>
+	</div>
+	<button onclick = 'getTasks()'> get </button>
+	<button onclick = 'drawTasks()'> draw </button>
+</div>
+
+<div id 'messet' class = 'header hidden'>
+	<div class = 'settings'>
+		<input id = 'tasktodo' type=checkbox> Только непрочитанные </input>
+	</div>
+	<div class = 'settings'>
+		Группировать по <select id = 'tasksort'> <option value=1>Отправителю</option> <option value=2>Дате</option> </select>
+	</div>
+</div>
+
+<div id = 'tasks' class = 'tasks'>
+<div id = 'letters' class = 'letters'>
+</div>
+
+</body>
+</html>
